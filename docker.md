@@ -1,5 +1,12 @@
 # Docker tips and dricks
 
+## Dockerfile tips
+
+### Set timezone in a container
+```
+echo "Europe/Oslo" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
+```
+
 ## Cleanup
 ### Remove untagged/dangling images
 ```
