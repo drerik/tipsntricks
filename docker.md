@@ -31,3 +31,8 @@ for d in `docker ps | awk '{print $1}' | tail -n +2`; do
     done
 done
 ```
+
+### Get log size for containers
+```
+ls -lh /var/lib/docker/containers/*/*-json.log
+```
