@@ -10,3 +10,9 @@
 $ echo "   s e  e ww sss    eee" | tr -s " "
  s e e ww sss eee
 ```
+
+
+## Get ip of ethernet device
+```
+ip addr show dev eth0 | grep inet\ | tr -s " " | cut -d' ' -f 3 | cut -d'/' -f 1
+```
