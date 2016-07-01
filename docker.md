@@ -32,7 +32,11 @@ for d in `docker ps | awk '{print $1}' | tail -n +2`; do
 done
 ```
 
-### Get log size for containers
+### dded alternative in "Get log size for containers"
 ```
 ls -lh /var/lib/docker/containers/*/*-json.log
+```
+Alternative with find command:
+```
+sudo find /var/lib/docker/containers -iname '*-json.log' -exec ls -lh {} \;
 ```
