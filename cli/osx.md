@@ -25,3 +25,9 @@ tap0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
     open (pid 42893)
 $
 ```
+
+## Add user to group weel
+Replace <user> with your username
+```
+sudo dseditgroup -o edit -a <user> -t user wheel
+```
