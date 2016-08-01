@@ -1,6 +1,44 @@
 # Docker tips and dricks
 
 ## Dockerfile tips
+### Move /var/lib/docker to a dedicated partition
+
+- Create a volume/drive in and attach it to the instance
+
+- Partition and format it with ext4
+```
+DRIVE=/dev/vdc
+sfdisk $DRIVE -uM << EOF
+,
+;
+EOF
+
+mkfs.ext4 -j $DRIVE"1"
+```
+
+- Gett UUID with `blkid` command and add to fstab
+```
+cp /etc/fstab{,.backup}
+DRIVE_UUID=$(blkid -o value -s UUID $DRIVE"1")
+echo "UUID=$DRIVE_UUID               /var/lib/docker    ext4    defaults        0 0" >> /etc/fstab
+```
+- Stop Docker deamon
+```
+service docker stop
+
+```
+- Move data from old to new folder
+```
+mv /var/lib/docker /var/lib/docker.old
+mkdir /var/lib/docker
+mount /var/lib/docker
+cp -rfp /var/lib/docker.old/* /var/lib/docker/
+```
+
+- Start docker deamon
+```
+service docker start
+```
 
 ### Set timezone in a container
 ```
