@@ -3,7 +3,7 @@
 ## Dockerfile tips
 ### Move /var/lib/docker to a dedicated partition
 
-- Create a volume/drive in and attach it to the instance
+- Create a volume/drive and mount it to the instance/server
 
 - Partition and format it with ext4
 ```
