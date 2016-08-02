@@ -16,3 +16,22 @@ $ echo "   s e  e ww sss    eee" | tr -s " "
 ```
 ip addr show dev eth0 | grep inet\ | tr -s " " | cut -d' ' -f 3 | cut -d'/' -f 1
 ```
+
+
+## Send email with telnet
+- Connect to the server with telnet
+```
+telnet smtp.mailserver.com 25
+```
+- Modify the text below and paste it in to the telnet session
+```
+HELO test.mailtest.com
+MAIL FROM: <sender@gmail.com>
+RCPT TO: <your@email.com>
+DATA
+From: mailtest <sender@gmail.com>
+Subject: testmail3
+this is a test
+.
+QUIT
+```
