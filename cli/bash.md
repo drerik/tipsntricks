@@ -35,3 +35,9 @@ this is a test
 .
 QUIT
 ```
+
+## Check yaml file for errors
+Exit 0 if ok, or stacktrace if not.
+```
+python -c 'import yaml,sys;yaml.safe_load(sys.stdin)' < yourfile.yaml
+```
