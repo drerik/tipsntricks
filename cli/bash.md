@@ -41,3 +41,9 @@ Exit 0 if ok, or stacktrace if not.
 ```
 python -c 'import yaml,sys;yaml.safe_load(sys.stdin)' < yourfile.yaml
 ```
+
+## Delete a specified string in a file
+ex. Deletes string 237 from /root/.ssh/known_hosts:
+```
+sudo sed -i.old '237d' /root/.ssh/known_hosts
+```
