@@ -31,3 +31,9 @@ Replace <user> with your username
 ```
 sudo dseditgroup -o edit -a <user> -t user wheel
 ```
+
+## Flush local dns cache
+osx has a internal dns cache, whitch you might need to flush or clear if you want to test a dns record update. Run the following command to flush the dns.
+```
+dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+```
