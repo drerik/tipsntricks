@@ -7,3 +7,5 @@ sudo /usr/sbin/mkswap /swap
 sudo chmod 0600 /swap
 sudo /usr/sbin/swapon /swap
 ```
+## To permanent add swap mem
+See https://coreos.com/os/docs/latest/adding-swap.html
