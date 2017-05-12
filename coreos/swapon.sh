@@ -4,7 +4,7 @@ swapfile=/swap
 
 # verify that swap is not enabled, report back if it is...
 curr_swap=$(free -o | grep ^Swap | tr -s " " | cut -d' ' -f 2)
-if [[ curr_swap == '0' ]]; then
+if [[ ! curr_swap -eq 0 ]]; then
   echo "Current swap mem is set to $curr_swap. aborting!"
   exit 2
 fi
@@ -19,6 +19,8 @@ if [[ ! -e $swapfile ]]; then
   sudo fallocate -l ${size}k /swap
   sudo /usr/sbin/mkswap /swap
   sudo chmod 0600 /swap
+else
+  echo "Using existing swap file"
 fi
 
 # enable it
