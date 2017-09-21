@@ -23,3 +23,5 @@ Add this environment variable before starting the JVM. Memory will then be dumpe
 JAVA_OPTS="$JAVA_OPTS -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/heapdump.hprof"
 ```
 
+## Mat: Memory dump analyzing tool
+Use Mat ( http://www.eclipse.org/mat/ ) to analyze the dump.
