@@ -47,3 +47,8 @@ ex. Deletes string 237 from /root/.ssh/known_hosts:
 ```
 sudo sed -i.old '237d' /root/.ssh/known_hosts
 ```
+
+## Wait on user to continue
+```
+read -n 0 -i "--Press enter to continue--"
+```
