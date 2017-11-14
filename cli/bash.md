@@ -59,3 +59,8 @@ while read -r line; do
     echo "hello $line" # Do something with $line
 done <<< "$(something that generates multiple lines)"
 ```
+
+## echo a string to stderr
+```
+echo "this is a error" 1>&2
+```
