@@ -52,3 +52,10 @@ sudo sed -i.old '237d' /root/.ssh/known_hosts
 ```
 read -n 0 -i "--Press enter to continue--"
 ```
+
+## Process each line in a variable/command
+```
+while read -r line; do
+    echo "hello $line" # Do something with $line
+done <<< "$(something that generates multiple lines)"
+```
