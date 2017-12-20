@@ -78,3 +78,9 @@ Alternative with find command:
 ```
 sudo find /var/lib/docker/containers -iname '*-json.log' -exec ls -lh {} \;
 ```
+
+## Docker inspect trics
+### Get the docker-compose service name of a container
+```
+docker inspect --format='{{index .Config.Labels "com.docker.compose.service"}}' $CONTAINER
+```
