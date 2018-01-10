@@ -64,3 +64,9 @@ done <<< "$(something that generates multiple lines)"
 ```
 echo "this is a error" 1>&2
 ```
+
+
+## Simple timestamp
+````
+TS=$(date +%F-%H-%M-%S.%N)
+```
