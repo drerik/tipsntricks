@@ -16,3 +16,11 @@ sudo /usr/sbin/swapon /swap
 
 ## To permanent add swap mem
 See the coreos doc on the subject https://coreos.com/os/docs/latest/adding-swap.html
+
+
+## Force update a coreos instance
+If you have disabled the automatic update, you can update the instace like this:
+```
+sudo systemctl start update-engine.service
+sudo update_engine_client -update
+```
