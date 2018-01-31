@@ -10,3 +10,10 @@ sudo systemsetup -setremotelogin on
 sudo systemsetup -setremotelogin off
 
 ```
+
+
+## Flush local dns cache
+- On osx sierra ( 10.12 ) and greater:
+```
+sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
+```
