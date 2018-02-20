@@ -11,3 +11,9 @@ Do Alt-F2 and run this command to get the terminal in your view:
 ```
 xfce4-terminal --drop-down
 ```
+
+Or just install Guake ( https://github.com/Guake/guake )
+```
+sudo apt install guake
+guake
+```
