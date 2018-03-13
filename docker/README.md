@@ -84,3 +84,16 @@ sudo find /var/lib/docker/containers -iname '*-json.log' -exec ls -lh {} \;
 ```
 docker inspect --format='{{index .Config.Labels "com.docker.compose.service"}}' $CONTAINER
 ```
+
+### Get container id for a specified docker-compose service
+```
+SERVICE_NAME=$1
+
+for CID in $(docker ps -q)
+do
+  CID_LABLED=$(docker inspect --format='{{index .Config.Labels "com.docker.compose.service"}}' $CID)
+  if [[ "$CID_LABLED" == $SERVICE_NAME ]]; then
+    echo $CID
+  fi
+done
+```
