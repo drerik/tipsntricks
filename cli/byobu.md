@@ -1,4 +1,4 @@
-# Byobu cheatsheed
+# Byobu cheatsheet
 
 ## Disconnect all other connections on host
 ```
