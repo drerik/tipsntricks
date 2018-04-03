@@ -20,3 +20,23 @@ To upload to the sftp server, simply connect using the sftp command or equalent 
 ```
 sftp -P 2222 uploader@185.55.107.196
 ```
+## Openvpn server
+Simple setup for a openvpn server with docker based on https://github.com/kylemanna/docker-openvpn
+Here's the docker-compose doc: https://github.com/kylemanna/docker-openvpn/blob/master/docs/docker-compose.md
+
+### docker-compose.yml
+```
+version: '3'
+services:
+  openvpn:
+    image: kylemanna/openvpn
+    restart: always
+    ports:
+      - "1194:1194/udp"
+    volumes:
+      - "vpn:/etc/openvpn"
+    cap_add:
+      - NET_ADMIN
+volumes:
+  vpn:
+```
