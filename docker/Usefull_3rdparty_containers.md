@@ -40,3 +40,6 @@ services:
 volumes:
   vpn:
 ```
+
+If you use ufw as firewall, you can open up the port with `sudo ufw allow 1194/udp`
+
