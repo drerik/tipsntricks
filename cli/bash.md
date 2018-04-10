@@ -79,3 +79,8 @@ TS=$(date +%F-%H-%M-%S.%N)
 ```
 for project in $(ls -1) ; do echo -n "$project: " ; git status $project | grep "nothing to commit" | echo $?  ; done
 ```
+
+## Save output to a file and exit code to another file for the same command
+```
+  ./myscript.sh 2>&1 | tee /var/log/myscript.log ; echo "${PIPESTATUS[0]}" > /var/log/myscript.exitcode
+```
