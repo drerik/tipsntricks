@@ -84,3 +84,8 @@ for project in $(ls -1) ; do echo -n "$project: " ; git status $project | grep "
 ```
   ./myscript.sh 2>&1 | tee /var/log/myscript.log ; echo "${PIPESTATUS[0]}" > /var/log/myscript.exitcode
 ```
+
+## Pretty print json
+```
+cat somefile.json | python -m json.tool
+```
