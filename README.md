@@ -1,2 +1,2 @@
 # Tips'n'Tricks
-In lack of findong time to blog, I put stuff in very short form here.
+In lack of finding time to blog, I put stuff in very short form here.
