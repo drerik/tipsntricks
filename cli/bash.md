@@ -89,3 +89,9 @@ for project in $(ls -1) ; do echo -n "$project: " ; git status $project | grep "
 ```
 cat somefile.json | python -m json.tool
 ```
+
+
+## Delete all files/folders older than <days> in <folder>
+ ```
+ find <folder> -maxdepth 1 -ctime +<days> -exec rm -rf {} \;
+ ```
