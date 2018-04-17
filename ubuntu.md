@@ -1,5 +1,10 @@
 # Ubuntu Tips and tricks
 
+## List installed packages
+```
+apt list --installed
+```
+
 ## Standard firewall setup
 ```
 sudo ufw allow from 14.15.16.16/28  to any port 22
