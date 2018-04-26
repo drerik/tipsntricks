@@ -25,3 +25,10 @@ JAVA_OPTS="$JAVA_OPTS -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/heapdump
 
 ## Mat: Memory dump analyzing tool
 Use Mat ( http://www.eclipse.org/mat/ ) to analyze the dump.
+
+
+## Get pid of a spesified java app
+This command returns the pid number of java application with class `com.enonic.xp.launcher.LauncherMain`
+```
+jps -l | grep com.enonic.xp.launcher.LauncherMain | cut -d' ' -f1
+```
