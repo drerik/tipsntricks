@@ -12,7 +12,7 @@ ansible-playbook -i hosts playbook.yml --list-tasks
 
 ### List hosts
 ```
-ansible-playbook -i hosts playbook.yml --list-hosts
+ansible-playbook -i hosts.yml playbook.yml --list-hosts
 ```
 
 ### Limit a ansible-playbook to a group or a spesific list for nameservers
@@ -23,7 +23,24 @@ ansible-playbook -i hosts playbook.yml --limit servergroup|host|host1,host2,host
 
 ### Get all facts from you hosts
 ```
-ansible -i ../../hosts  all -m setup
+ansible -i hosts  all -m setup
+```
+
+## Task tips
+
+### Run a command and output stderr
+```
+- name: Get proxmox version
+  tags:
+    - get_proxmox_version
+  shell: pveversion
+  register: pveversion
+
+- name: Print proxmox version
+  tags:
+    - get_proxmox_version
+  debug:
+    msg: "{{ pveversion.stdout }}"
 ```
 
 

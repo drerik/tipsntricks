@@ -95,3 +95,26 @@ cat somefile.json | python -m json.tool
  ```
  find <folder> -maxdepth 1 -ctime +<days> -exec rm -rf {} \;
  ```
+
+## Calculate a sum if numbers in a file with paste and bc
+Where `number_list.txt` looks like:
+ ```
+15
+24
+100
+123
+```
+
+You can do this to sum the numbers:
+```
+$ cat number_list.txt | paste -s -d + - | bc
+262
+```
+
+
+## upload output of a command to file on a linx server
+To set up a linx server, see: [https://github.com/andreimarcu/linx-server]().
+Replace `$YOUR_CMD` with your command you want to run.
+```
+TS=$(date +%s) && $YOUR_CMD | tee /tmp/$TS.txt && curl -H "Linx-Expiry: 1200" -H "Linx-Randomize: yes" -T /tmp/$TS.txt https://upload.yourlinxserver.com/upload/
+```
