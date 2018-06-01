@@ -116,5 +116,5 @@ $ cat number_list.txt | paste -s -d + - | bc
 To set up a linx server, see: [https://github.com/andreimarcu/linx-server]().
 Replace `$YOUR_CMD` with your command you want to run.
 ```
-TS=$(date +%s) && $YOUR_CMD 2>&1 | tee /tmp/$TS.txt && curl -H "Linx-Expiry: 604800" -H "Linx-Randomize: yes" -T /tmp/$TS.txt https://upload.yourlinxserver.com/upload/
+TS=$(date +%s) && $YOUR_CMD 2>&1 | tee /tmp/$TS.txt && curl -H "Linx-Expiry: 1200" -H "Linx-Randomize: yes" -T /tmp/$TS.txt https://upload.yourlinxserver.com/upload/
 ```
