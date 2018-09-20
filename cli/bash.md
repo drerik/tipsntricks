@@ -118,3 +118,9 @@ Replace `$YOUR_CMD` with your command you want to run.
 ```
 TS=$(date +%s) && $YOUR_CMD 2>&1 | tee /tmp/$TS.txt && curl -H "Linx-Expiry: 1200" -H "Linx-Randomize: yes" -T /tmp/$TS.txt https://upload.yourlinxserver.com/upload/
 ```
+
+
+## Archive a python project without .git repo or cache and pyc files
+```
+tar --exclude-vcs --exclude '*.pyc' --exclude '__pycache__' -cvf python_project.tar python_project
+```
