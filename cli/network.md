@@ -20,3 +20,8 @@ for example reading openssh version. In this example the connection exists after
 ```
 nc -d -w 1 your.server.com 22
 ```
+
+## Check if a host is online or offline with ping
+```
+ping -c 1 -W 1 -q your.server.com > /dev/null && echo "online" || echo "offline"
+```
