@@ -14,3 +14,9 @@ on server2:
 its open!
 [root@server2 hosts]#
 ```
+
+## Using netcat to read the first line of a tcp connection
+for example reading openssh version. In this example the connection exists after 1 second and disables stdin.
+```
+nc -d -w 1 your.server.com 22
+```
