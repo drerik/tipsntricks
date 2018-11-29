@@ -42,7 +42,12 @@ ansible -i hosts  all -m setup
   debug:
     msg: "{{ pveversion.stdout }}"
 ```
-
+### Do preety debug output
+```
+- name: Output std.out of registred_result
+  debug:
+    msg: "{{ registred_result.stdout.split('\n') }}" 
+```
 
 ## Ansible templating
 Templating doc: http://jinja.pocoo.org/
