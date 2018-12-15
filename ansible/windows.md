@@ -1,5 +1,11 @@
 # Tips on ansible and windows
 
+## Additional setup on ansible host
+Install winrm python module
+```
+pip install pywinrm[credssp]
+```
+
 ## Setting WinRM up on host
 Configures WinRM with CredSSP enabled and BasicAuth disabled
 ```
