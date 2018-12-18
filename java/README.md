@@ -32,3 +32,17 @@ This command returns the pid number of java application with class `com.enonic.x
 ```
 jps -l | grep com.enonic.xp.launcher.LauncherMain | cut -d' ' -f1
 ```
+
+## Running java applets from appletviewer ( commandline )
+Define permissions for your java applet in `$JAVA_HOME/jre/lib/security/java.polic`, this will allow all permissions to the applet on the specified path:
+```
+grant codeBase "https://yourserver.com/applet_path/-" {
+  permission java.security.AllPermission;
+};
+```
+
+Run the applet with the following command:
+```
+$JAVA_HOME/bin/appletviewer.exe https://yourserver.com/applet_path/index.html
+```
+
