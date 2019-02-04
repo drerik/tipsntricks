@@ -30,3 +30,14 @@ FailFunction
 Write-Host("Sentence after fail")
 
 ```
+
+## Show full output of a powershell object
+
+To show all properties of a object you can pipe it to `select`
+```
+ Get-VM -Name MobyLinuxVM |  select *
+```
+And get a set of properties, change the wildcard to the properties you want
+```
+ Get-VM  |  select Name, State, Path
+ ````
