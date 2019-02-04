@@ -1,4 +1,5 @@
 # PowerShell tips and tricks
+Official Powershell documentation: https://docs.microsoft.com/en-us/powershell/
 
 ## Check if you can connect to a tcp port on a host
 ```
