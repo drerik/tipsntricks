@@ -41,3 +41,16 @@ And get a set of properties, change the wildcard to the properties you want
 ```
  Get-VM  |  select Name, State, Path
  ````
+ 
+ ## Print out debug messages when developing script
+ Set `$DebugPreference` to change the way powershell behave on errors.
+ Options:
+ - SilentlyContinue (Default): Ignores debug medssages and continues
+ - Stop: stops on Write-Debug or other debugging messages
+ - Inquire: Asks you if you want to continue on every debug message
+ - Continue: Displays the error message and continues.
+ 
+ 
+ ```
+ $DebugPreference = "Continue"
+ ```
