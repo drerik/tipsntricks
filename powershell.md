@@ -1,6 +1,12 @@
 # PowerShell tips and tricks
 Official Powershell documentation: https://docs.microsoft.com/en-us/powershell/
 
+## List Cmdlets in a powershell module
+This example lists out all Cmdlets in the moduel Hyper-v
+```
+ Get-Command * -Module Hyper-v
+```
+
 ## Check if you can connect to a tcp port on a host
 ```
 Test-NetConnection -Port 80 -ComputerName vg.no
