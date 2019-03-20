@@ -51,3 +51,15 @@ ansible -i hosts  all -m setup
 
 ## Ansible templating
 Templating doc: http://jinja.pocoo.org/
+
+## Force a playbook to have a --limit set when executed
+```
+- name: Upgrade cyberark admin servers
+  hosts: lab-cyberark*
+  tasks:
+    - name: Fail a task if limit is not set
+      fail:
+        msg: "you must use -l or --limit"
+      when: ansible_limit is not defined
+      run_once: true
+ ```
