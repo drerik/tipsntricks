@@ -1,10 +1,22 @@
 # Hyper-v and powershell tips and tricks
 
+See https://docs.microsoft.com/en-us/powershell/module/hyper-v/ for full documentation.
 
+Omit `-ComputerName remote_hypervisor` if you are working wit virtual machins on a localhost.
 
+## Start a virtual machine
+
+```powershell
+Start-VM -ComputerName remote_hypervisor -Name vm_name
+```
+
+## Stop a virtual machine
+
+```powershell
+Stop-VM -ComputerName remote_hypervisor -Name vm_name
+```
 
 ## Snapshots
-Omit `-ComputerName remote_hypervisor` if you are working wit virtual machins on a localhost.
 
 ### List snapshots from a virtual machine
 
