@@ -124,3 +124,19 @@ TS=$(date +%s) && $YOUR_CMD 2>&1 | tee /tmp/$TS.txt && curl -H "Linx-Expiry: 120
 ```
 tar --exclude-vcs --exclude '*.pyc' --exclude '__pycache__' -cvf python_project.tar python_project
 ```
+
+## color coded output in less
+```
+sudo apt install source-highlights
+```
+
+Add the following to your bashrc or equalent:
+```
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
+```
+
+To confirm the location of src-hilite-lesspipe.sh, do a:
+```
+dpkg -L libsource-highlight-common | grep src-hilite-lesspipe.sh
+```
