@@ -125,7 +125,7 @@ TS=$(date +%s) && $YOUR_CMD 2>&1 | tee /tmp/$TS.txt && curl -H "Linx-Expiry: 120
 tar --exclude-vcs --exclude '*.pyc' --exclude '__pycache__' -cvf python_project.tar python_project
 ```
 
-## color coded output in less
+## Color coded output in less
 ```
 sudo apt install source-highlights
 ```
