@@ -63,3 +63,13 @@ Templating doc: http://jinja.pocoo.org/
       when: ansible_limit is not defined
       run_once: true
  ```
+
+## Run a module ad-hoc
+
+You can run a module ad-hoc on a system registered in your inventory.
+
+```bash
+ansible -i hosts myserver -m win_service -a "name=telegraf state=restarted"
+```
+
+Se the ansible doc for more information on ad-hoc commands: https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html
