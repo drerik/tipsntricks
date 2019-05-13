@@ -60,3 +60,14 @@ And get a set of properties, change the wildcard to the properties you want
  ```
  $DebugPreference = "Continue"
  ```
+ 
+ ## Tail a file
+ 
+ Using Get-Content to read files like `tail -n 20 -f c:\your\logfile.log` un *nix
+
+ 
+ ```powershell
+ gc -Tail 20 -Wait c:\your\logfile.log
+ ```
+
+See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-6 for more on Get-Content
