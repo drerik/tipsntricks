@@ -71,3 +71,10 @@ And get a set of properties, change the wildcard to the properties you want
  ```
 
 See https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-6 for more on Get-Content
+
+
+## Run a command on multiple machines
+Here as an exampe, we test connectivity to 8.8.8.8
+```
+Invoke-Command -ComputerName server1,server2,server3 -ScriptBlock { Test-NetConnection 8.8.8.8 }
+```
