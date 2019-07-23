@@ -78,3 +78,4 @@ Here as an exampe, we test connectivity to 8.8.8.8
 ```
 Invoke-Command -ComputerName server1,server2,server3 -ScriptBlock { Test-NetConnection 8.8.8.8 }
 ```
+See https://www.howtogeek.com/117192/how-to-run-powershell-commands-on-remote-computers/ for more details on Using Invoke-Command
