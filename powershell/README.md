@@ -80,7 +80,7 @@ Invoke-Command -ComputerName server1,server2,server3 -ScriptBlock { Test-NetConn
 ```
 See https://www.howtogeek.com/117192/how-to-run-powershell-commands-on-remote-computers/ for more details on Using Invoke-Command
 
-## Copy file to/from remote server with PSSessiong
+## Copy file to/from remote server with PSSession
 
 First Create a session:
 ```
