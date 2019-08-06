@@ -79,3 +79,22 @@ Here as an exampe, we test connectivity to 8.8.8.8
 Invoke-Command -ComputerName server1,server2,server3 -ScriptBlock { Test-NetConnection 8.8.8.8 }
 ```
 See https://www.howtogeek.com/117192/how-to-run-powershell-commands-on-remote-computers/ for more details on Using Invoke-Command
+
+## Copy file to/from remote server with PSSessiong
+
+First Create a session:
+```
+$RemoteServerSession = New-PSSession -ComputerName remoteserver
+```
+
+Copy from server:
+```
+Copy-Item -FromSession $RemoteServerSession -Path 'c:\files\to\download' -Destination . -Recurse
+```
+
+Copy to server:
+```
+Copy-Item -ToSession $RemoteServerSession -Path 'c:\files\to\copy' -Destination 'c:\upload\location\' -Recurse
+```
+
+
