@@ -73,3 +73,10 @@ ansible -i hosts myserver -m win_service -a "name=telegraf state=restarted"
 ```
 
 Se the ansible doc for more information on ad-hoc commands: https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html
+
+
+## Show vault string_encryptet password for a host
+
+```bash
+ansible localhost -m debug -a var='ansible_password' -e '@inventory/host_vars/myserver.yml' --ask-pass
+```
