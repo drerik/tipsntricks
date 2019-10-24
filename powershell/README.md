@@ -97,4 +97,8 @@ Copy to server:
 Copy-Item -ToSession $RemoteServerSession -Path 'c:\files\to\copy' -Destination 'c:\upload\location\' -Recurse
 ```
 
+## Check when windows update was run last time
 
+```powershell
+(New-Object -com "Microsoft.Update.AutoUpdate"). Results
+```
