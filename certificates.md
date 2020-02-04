@@ -1,0 +1,1 @@
+# Certificate tips and tricks
