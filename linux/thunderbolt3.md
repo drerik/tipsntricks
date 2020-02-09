@@ -1,5 +1,5 @@
 # Thunderbolt 3 tips and tricks
-
+- Arch guide: https://wiki.archlinux.org/index.php/Thunderbolt
 ## Authorizing a Thunderbolt 3 dock
 
 1. Use the tool boltctrl to list connected thunderbolt docs
