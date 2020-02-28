@@ -102,3 +102,9 @@ Copy-Item -ToSession $RemoteServerSession -Path 'c:\files\to\copy' -Destination 
 ```powershell
 (New-Object -com "Microsoft.Update.AutoUpdate"). Results
 ```
+
+## Show diskspace on current machine ( equalent of "df" on linux )
+
+```powershell
+get-psdrive
+```
