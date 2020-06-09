@@ -41,6 +41,18 @@ Exit 0 if ok, or stacktrace if not.
 ```
 python -c 'import yaml,sys;yaml.safe_load(sys.stdin)' < yourfile.yaml
 ```
+## Convert yaml to json from stdin
+... So that you can parse it with jq...
+
+```bash
+python -c 'import json, sys, yaml ; y=yaml.safe_load(sys.stdin.read()) ; print(json.dumps(y))'
+```
+
+Create it as a alias
+
+```bash
+alias yaml2json="python -c 'import json, sys, yaml ; y=yaml.safe_load(sys.stdin.read()) ; print(json.dumps(y))'"
+```
 
 ## Delete a specified string in a file
 ex. Deletes string 237 from /root/.ssh/known_hosts:
