@@ -15,3 +15,13 @@ sudo cp your-ca.crt /usr/share/ca-certificates/extra/.
 # To run it interactivly, run this one instead: sudo dpkg-reconfigure ca-certificates
 sudo update-ca-certificates
 ```
+
+## Validate certificates with md5 or other hash
+
+To validate a certificate, you can create a md5 checksum that you can validate against each other.
+
+```bash
+openssl x509 -noout -modulus -in certificate.crt | openssl md5
+openssl rsa -noout -modulus -in privateKey.key | openssl md5
+openssl req -noout -modulus -in CSR.csr | openssl md5
+```
