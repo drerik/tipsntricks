@@ -80,3 +80,12 @@ Se the ansible doc for more information on ad-hoc commands: https://docs.ansible
 ```bash
 ansible localhost -m debug -a var='ansible_password' -e '@inventory/host_vars/myserver.yml' --ask-pass
 ```
+
+## Write content of a inventory variable to file
+
+```yaml
+- name: Write variable to file
+  copy:
+    dest: /etc/output_file.yml
+    content: "{{ variable_to_save | to_nice_yaml( width=2000, explicit_start=True, explicit_end=True) }}"
+``` 
