@@ -80,6 +80,11 @@ Se the ansible doc for more information on ad-hoc commands: https://docs.ansible
 ```bash
 ansible localhost -m debug -a var='ansible_password' -e '@inventory/host_vars/myserver.yml' --ask-pass
 ```
+## Create vault encrypted varable
+
+```bash
+echo -n 'supersecret string' | ansible-vault encrypt_string --stdin-name 'super_secret_variable'
+```
 
 ## Write content of a inventory variable to file
 
